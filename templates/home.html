@@ -2,8 +2,46 @@
 
 {% block body %}
 
-
-
-
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" class="mb-4"><h4>S.no.</h4></th>
+            <th scope="col" class="mb-4"></th>
+            <th scope="col" class="mb-4"><h4>Coins</h4></th>
+            <th scope="col" class="mb-4"><h4>Price(&#8377)</h4></th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            {% if data %}
+            {% for obj in data %}
+          <tr>
+            
+            <th scope="row">{{obj.market_cap_rank}}</th>
+            <td><img src="{{obj.image}}" width="80px" height="80px"></td>
+            <td>
+                <h5>{{obj.name}}</h5>
+                <p><i>{{obj.symbol}}</i></p>
+            </td>
+            <td><b>{{obj.current_price}}</b></td>
+        </tr>
+            {% endfor %}
+            {% endif %}
+          
+          <!-- <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr> -->
+        </tbody>
+      </table>
+</div>
 
 {% endblock %}
